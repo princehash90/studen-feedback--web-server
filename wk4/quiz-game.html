@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<p>What is the capital of Michigan?</p>
+<button class="wrong-answer">Grand Rapids</button>
+<button id="correct-answer">Lansing</button>
+<button class="wrong-answer">Detroit</button>
+
+<p id="result">result</p>
+
+<script>
+
+  let correctAnswerButton=document.querySelector('#correct-answer')
+
+  let defaultButtonColor=correctAnswerButton.style.background
+
+  let result = document.querySelector('#result')
+
+  let wrongAnswerButtons=document.querySelectorAll('.wrong-answer') // selectorAll helps returns all matching elements
+
+  //adding event listener
+  wrongAnswerButtons.forEach( function (wrongAnswerButton) {// wrongAnswerButton is giving a name to the function
+    //forEach loop repeat one time for each element
+    wrongAnswerButton.addEventListener('click',function () {
+      result.innerHTML= 'Wrong Answer, try again'
+      correctAnswerButton.style.background=defaultButtonColor
+
+    })
+  })
+  // imperative for loop style
+  //for (let x=0;x<wrongAnswerButtons.length; x++){
+    //let wrongAnswerButton= wrongAnswerButtons[x]
+    //wrongAnswerButton.addEventListener('click',function () {
+     // result.innerHTML= 'Wrong Answer, try again'
+      //correctAnswerButton.style.background=defaultButtonColor
+
+    //})
+
+  //}
+  
+
+  correctAnswerButton.addEventListener('click',function () {
+    result.innerHTML='Correct Answer'
+    correctAnswerButton.style.background = 'cyan'
+  })
+  
+</script>
+
+</body>
+</html>

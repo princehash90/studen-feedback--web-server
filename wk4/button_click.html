@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<button>Click Here!</button>
+
+<script>
+
+  let button=document.querySelector('button')
+  // let is used to create a variable on JS
+  //document is the whole web page
+  //queryselector will find the first button
+  //script is wrriten here
+
+  button.addEventListener('click', function () {
+
+    alert('you clicked the button')
+    // this is the message that will pop out when the button is clicked
+    button.innerHTML='you clicked the button'
+    button.style.background = 'red'
+   // button.remove();
+
+  })
+
+</script>
+
+</body>
+</html>

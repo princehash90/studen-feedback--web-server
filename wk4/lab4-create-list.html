@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Uunordered List</title>
+</head>
+<body>
+<h1> List Generator</h1>
+
+<p>Enter some text to add to the list</p>
+<input id="new-text" type="text" name="text">
+<button id="add-new-button" name="button">Add new list item</button>
+
+<ul id="list-of-items">
+
+</ul>
+<button id="Clear">clear</button>
+
+
+<script>
+    //find the itnput with ID and making variable to represent
+    //javascript to represent to represent HTML Element
+
+    let textInput=document.querySelector('#new-text')
+    let addButton=document.querySelector('#add-new-button')
+    let textList=document.querySelector('#list-of-items')
+    let clearButton=document.querySelector('#clear')
+
+    let elementsInList= 0// tracking number of items in list
+    let maxElements=10// maximum number of items in the list
+
+    document.addEventListener('keyup',function () {// this code is for to use ENTER when user clicks, it adds to the list
+        if (event.keyCode==13){ //13 is the keynumber of the Enter
+            addButton.click()// with click on the add button, user presses enter and it is added to the list
+        }
+    })// end of keyup event
+    addButton.addEventListener('click', function () {//validating if the user entered a tax
+        let newInputText = textInput.value// getting the value of in the input
+        if (newInputText.length==0){// checking if the user does not put anything
+            alert('Enter some text')// if the user enters no text, this will pop out
+        }else if (newInputText.length>=50){//checking if the number if the number of text is more than 50
+            alert('you have entered long text-more than 50')
+            return;
+        }
+
+        if (elementsInList>=maxElements){//checking to see if the max number is not exceeded
+            alert('No more elements can be added')
+            return
+        }
+        //good to add alert to check if the event listener code is running as expected
+
+        let newListItemElement= document.createElement('li')// storing the input into a variable
+        newListItemElement.innerHTML=newInputText
+        textList.appendChild(newListItemElement)
+        textInput.value=''
+        elementsInList++// increasing the number items in the list
+        //alert("hello")
+
+    })// end of add button event listener code
+
+    clearButton.addEventListener('click', function () {
+        textList.innerHTML=''
+        elementsInList=0
+    })
+
+</script>
+
+
+
+</body>
+</html>
