@@ -91,16 +91,16 @@
         let zip=zipCode.value
         // TODO Validate that all six input and select elements have been completed
         //  - check they all have a value
-        if (!name && !houseNumber && !streetName && !treeType && !city && !zip ){
-            console.log("all fields needs to be completed")
-        }else{
-            console.log(orderSummaryParagraph)
-        }
+        //if (!name && !houseNumber && !streetName && !treeType && !city && !zip ){
+            //console.log("all fields needs to be completed")
+       // }else{
+            //console.log(orderSummaryParagraph)
+        //}
         // TODO Validate the zipcode is in the range 55001 and 56763.
         let zipCodeParse= parseInt(zip)
-        if (zipCodeParse>=55001 && zipCodeParse <=56763){
-            return true
-        }
+        //if (zipCodeParse>=55001 && zipCodeParse <=56763){
+           // return true
+        //}
         // to check that the zip code is in Minnesota.
         // Make sure your script doesn't accept non-numeric input for the zip code.
 
@@ -121,35 +121,38 @@
         // display an alert with all of the error messages. (Hint: use join)
         // and then return from this function to prevent further processing
 
-        if (nameInput.length===0){
-            errors.push('Enter a valid name')
-            return
+        if (name.length===0){// checking if the name input is equal zerp
+            errors.push('Enter a valid name')// this error is pushed to error list
         }
-        if (homeownerHouseNumberInput.length===0){
-            errors.push('Enter house number')
-            return
+        if (houseNumber.length===0){// checking the length of the house number input
+            errors.push('Enter house number')// if there is no entry, this error is pushed
         }
-        if (!homeownerStreetNameInput){
-            errors.push('enter street address')
-            return
+        if (!streetName){//checking to see if there is no input on the street name input
+            errors.push('enter street address')// if there is, this error is pushed
+
         }
-        if (!cityInput){
+        if (!city){//checking to see if there is no input on the city name
             errors.push('enter a city name')
-            return
+
         }
-        if (zipCode>=55001 && zipCode<56763){
+        if (zip.length===0 || zip<=55001 || zip>=56763){// checking to see the range of the zip code
             errors.push('a Minnesota zip code that is between 55001 and 56763')
         }
 
-        if (errors.length > 0){
-            let errorMessage=errors.join('\n')
-            alert(errorMessage)
-        } else {
-
+        if (!treeType){// checking to see if the tree type is selected
+            errors.push("Choose a tree")
         }
 
         // TODO - If there are no errors, use a template string to display an order
         // summary in the order summary paragraph.
+
+        if (errors.length > 0){// if error list is more than 0,
+            let errorMessage=errors.join('\n')// errors are joined together
+            alert(errorMessage)// this error message pops out
+        } else {// if there is no errors, this summary page is printed
+            orderSummaryParagraph.innerHTML=` Here is the order summary <br>${name}<br>
+            ${houseNumber} ${streetName}<br> ${city}, ${zip}<br> tree type order: ${treeType}`
+        }
 
 
 

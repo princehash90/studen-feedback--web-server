@@ -228,8 +228,20 @@ let fullNameString= fullNameArray.join(' ')//joining up the first and last name 
 console.log(fullNameString)//printing the full name
 
 // TODO print the ids of each of the Physics Nobel laureates. Your code should still work without modification if a laureate was added, or removed.
+let physicInfo= allLaureates[0]
+let physicLaureates= physicInfo.laureates
+//console.log(physicLaureates)
+physicLaureates.forEach(function (objectElement) {
+    let id =objectElement.id
+    console.log(id)
+})
 
 // TODO write code to print the names of all of the prize categories (So your output would start physics, chemistry, medicine... ).
+let catergories = allLaureates
+catergories.forEach(function (catergoryElement) {
+  let allCatergories= catergoryElement.category
+    console.log(`${allCatergories}`)
+})
 
 // TODO write code to print the total number of prize categories
 
