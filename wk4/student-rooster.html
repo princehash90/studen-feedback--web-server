@@ -76,11 +76,11 @@
             return
         }
         let studentGpaInput=studentGpa.value
-        if (studentGpaInput >4){//validating gpa to be btn 0 and 4
+        if (studentGpaInput >4 && !studentGpaInput){//validating gpa to be btn 0 and 4
             alert('please enter gpa between 0 and 4')
         }
         let newItemList= document.createElement('li')
-        newItemList.innerHTML=studentNameInput + ',' +` ID: ${studentIdInput}, ` + ` GPA ${studentGpaInput}`
+        newItemList.innerHTML=`${studentNameInput}, ID: ${studentIdInput}, GPA: ${studentGpaInput}`
         //concatenating name, student id and gpa in one line
         studentList.appendChild(newItemList)// adding the name, student id and gpa to the list
         studentName.value=''// clearing the textbook right after it has been added to the list
