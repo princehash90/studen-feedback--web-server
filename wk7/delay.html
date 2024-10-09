@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Timeout</title>
+</head>
+<body>
+
+<h1> Expect an alert in 3 seconds after the page loads</h1>
+
+<h1>Interval</h1>
+<p id="time"></p>
+
+<script>
+
+  let timeElement = document.querySelector('#time')
+  setInterval(function () {
+   let date = Date()
+    timeElement.innerHTML=date
+  },1000)
+  //setTimeout(function () {// this is used for an event that will happen in the future
+   // alert('Hello 3 seconds is over')
+ // },3000)//3000 is milliseconds
+
+
+</script>
+</body>
+</html>
