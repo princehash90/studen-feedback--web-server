@@ -14,14 +14,20 @@
 <script>
 
   let timeElement = document.querySelector('#time')
-  setInterval(function () {
-   let date = Date()
-    timeElement.innerHTML=date
-  },1000)
+  // setInterval(function () {
+  //  let date = Date()
+  //   timeElement.innerHTML=date
+  //},1000)
   //setTimeout(function () {// this is used for an event that will happen in the future
    // alert('Hello 3 seconds is over')
  // },3000)//3000 is milliseconds
 
+
+  //using arrow notation
+  setInterval(()=> {
+      let date= Date()
+      timeElement.innerHTML=date
+  }, 1000)
 
 </script>
 </body>
