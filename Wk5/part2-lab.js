@@ -246,5 +246,12 @@ catergories.forEach(function (catergoryElement) {
 // TODO write code to print the total number of prize categories
 
 // TODO write code to count the total number of laureates from 2017.
+let totalLaureates = 0
+catergories.forEach(function (catergoryElement) {
+    let laureatesForCategory = catergoryElement.laureates
+    // how long is laureatesForCategory? Get the length
+    let laureateLength= laureatesForCategory.length
 
+    // add to totalLaureates
+})
 //   have a good look at how the JSON is structured, and think about what loop(s) you'll need to write.

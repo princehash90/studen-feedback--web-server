@@ -1,5 +1,5 @@
-let mapCenter =[45,-93] //start point of the map
-let zoomLevel =4.3//setting up the view
+let mapCenter =[40,-99] //start point of the map
+let zoomLevel =4.49//setting up the view
 let bridgeMap = L.map('bridge-map').setView (mapCenter,zoomLevel)
 
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -42,6 +42,8 @@ bridgeList.forEach(function (bridgeObject) {// for loop to get names, coordinate
     bridgeMarker.bindPopup(`${bridgeName} with span of ${bridgeSpan} meters`);
 
 })
+
+
 
 
 //this code is for the chart
