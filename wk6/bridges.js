@@ -1,4 +1,4 @@
-let mapCenter =[40,-99] //start point of the map
+let mapCenter =[40,-99] //start point of the map. changed
 let zoomLevel =4.49//setting up the view
 let bridgeMap = L.map('bridge-map').setView (mapCenter,zoomLevel)
 
