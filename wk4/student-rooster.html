@@ -76,7 +76,7 @@
             return
         }
         let studentGpaInput=studentGpa.value
-        if (studentGpaInput >4 && !studentGpaInput){//validating gpa to be btn 0 and 4
+        if (studentGpaInput =>4 && studentGpaInput.length===0){//validating gpa to be btn 0 and 4
             alert('please enter gpa between 0 and 4')
         }
         let newItemList= document.createElement('li')
