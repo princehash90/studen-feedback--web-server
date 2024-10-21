@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue To Do list</title>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+</head>
+
+<body>
+
+<div id="app">
+
+    <h1>Task List</h1>
+    <h2>Enter a new task</h2>
+    <label>Enter your to-do task</label>
+    <input type="text" v-model="newtask"> <!-- using v-model-->
+
+    <br>
+    <button v-on:click="addTask">Add Task</button><br><!--using v-on:click to add button-->
+
+    <h2>Task List</h2>
+<ul>
+    <li v-for="task in taskList">
+        {{task}}
+    </li>
+</ul>
+
+</div>
+
+<script>
+    //setting up the vue app
+    const { createApp, ref } = Vue
+    createApp({
+        setup(){
+
+            const taskList = ref(['Water plants','Pay cellphone bill', 'wash floor','go to the store'])
+            const newtask= ref('')
+            const addTask= () => {
+                //add the newTask to teh tasklist
+                if (newtask.value) {
+                    taskList.value.push(newtask.value)
+                    newtask.value = ''
+                }
+            }
+
+            return {
+                taskList,
+                newtask,
+                addTask
+            }
+        }
+
+    }).mount('#app')//vue managing the page
+</script>
+
+</body>
+</html>

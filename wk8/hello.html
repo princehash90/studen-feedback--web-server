@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello Vue</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+
+<div id="app">
+
+    <h1>Hello Vue!</h1>
+
+    <p>{{messageWithExclamationPoints}}</p>
+
+    <button v-on:click="addExclamationPoints">Add Exclamation Points</button>
+    <button v-on:click="clearExclamationPoints">Clear Exclamation</button>
+
+</div>
+
+<script>
+    //setting up the Vue app
+    const {createApp, ref, computed} = Vue// this sets up the vue app
+
+    createApp({// the function
+        setup() {
+            //define thing Vue App needs here.
+            const message =ref('Hey')
+            const numberOfExclamationPoints =ref(0)
+
+                function addExclamationPoints() {
+                if (numberOfExclamationPoints.value < 10) {
+                    message.value = message.value + '!'
+                    numberOfExclamationPoints.value ++
+                }else {
+                    alert('no more exclamation points')
+                }
+
+            }
+
+            function clearExclamationPoints() {// this function clears the exclamation points
+                numberOfExclamationPoints.value =0// it sets back the ! to 0
+                //message.value = 'Hi!'
+            }
+            const messageWithExclamationPoints = computed(function (){// function to show the message with exclamation
+                let computedMessage = message.value// getting the value from the message variable on line 28
+                //adding ! on numberOfExclamationPoints
+                for (let i = 0; i < numberOfExclamationPoints.value; i++) {// a loop to loop over the number of exclamationpoints
+                    computedMessage=computedMessage + '!'// adding ! to the computedMessage
+                }
+                return computedMessage
+            })
+
+            return{
+                message,
+                numberOfExclamationPoints,
+                messageWithExclamationPoints,
+                clearExclamationPoints,
+                addExclamationPoints
+            }
+        }
+    }).mount('#app')
+
+</script>
+
+</body>
+</html>
