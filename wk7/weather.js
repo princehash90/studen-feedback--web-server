@@ -27,12 +27,13 @@ fetch(weatherApiUrl).then( res => {// response is bytes of data
         let timePeriodTdElement = document.createElement('td');// data for time
         let temperatureTdElement = document.createElement('td');//temperature data
         let iconTdElement = document.createElement('td');// iconTdElemen
+        let iconImageElement = document.createElement('img')
         let detailedTdElement = document.createElement('td');
         let windTdElement = document.createElement('td');
 
         timePeriodTdElement.innerHTML=timePeriod// printing the time in the html
         temperatureTdElement.innerHTML=temperatureText// printing the temperature in the table
-        iconTdElement.innerHTML=iconPeriod
+        iconImageElement.src=iconPeriod
         detailedTdElement.innerHTML=detailedForestPeriod// printing the detailed weather info on the table
         windTdElement.innerHTML=windSpeedPeriod// recording the windspeed
 
@@ -43,6 +44,7 @@ fetch(weatherApiUrl).then( res => {// response is bytes of data
         tableRowElement.appendChild(iconTdElement)
         tableRowElement.appendChild(detailedTdElement)
         tableRowElement.appendChild(windTdElement)
+        iconTdElement.appendChild(iconImageElement)
         forecastTableElement.appendChild(tableRowElement)
 
     })
