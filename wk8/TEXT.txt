@@ -1,0 +1,1 @@
+Vue Error Means you are trying to use a variable you have not defined or created yet or you have created the variable but have not added to the return or you have a typo
