@@ -1,6 +1,6 @@
 comparing the solution for part to this one shows a lot of difference such as less coding, easily to follow along and the functions makes it a lot easier to build the program.
 
-Vanilla JavaScript and Vue are both for building web applications but Vanilla JavaScript is plain JS without the
+Vanilla JavaScript and Vue are both for building web applications, but Vanilla JavaScript is plain JS without the
  use of any additional libraries or framework, while Vue. JS framework used for building user interface. Vue.JS is tool
  that is built on top of JavaScript to provide a set of features and functionality for building complex and dynamic
  user interface. Vue.js provides a structured approach with components, templates, and data binding while Javascript is more

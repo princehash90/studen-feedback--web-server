@@ -104,7 +104,7 @@
         setup() {
 
             // Create a new ref studentList. This will be an array. The array can be empty, or you can create an example student or students if you like.
-                const studentList= ref([])
+                const studentList= ref([])// an array list to hold sudents
             // Create a new ref newStudentName, initially an empty string
             const newStudentName=ref('')
             // Create a new ref newStudentId, initially an empty string
@@ -113,44 +113,50 @@
             const newStudentGpa=ref('')
 
             // Use this for form validation
-            const errors = ref([])
+            const errors = ref([])// an array to hold number of errors
 
             // Create a computed property studentCount. This will set the value to the length of the student list.
 
             const studentCount= computed(()=>{
                 return studentList.value.length
             })
-
+            // this function adds a new student
             const addNewStudent = () => {
                 // Set the errors value to an empty array
                 errors.value = []
                 // Read the value from newStudentName. If it is empty, add an error message to the end of the errors ref.
-                if (!newStudentName.value){
-                    errors.value.push('Student Name is required')
+                if (!newStudentName.value){// checking if there is value on the studentName input
+                    errors.value.push('Student Name is required')// if there is an errors, it adds to the error list and
+                    //this error is displayed
                 }
                 // Read the value from newStudentId. If it is empty, add an error message to the end of the errors ref.
-                if (!newStudentID.value){
-                    errors.value.push('Student ID is required')
+                if (!newStudentID.value){// checking if there is entry made on the student ID
+                    errors.value.push('Student ID is required')//if there is an errors, it displays this messages
+                    //it also pushes to the error list
                 }
                 // Read the value from newStudentGPA. If it is empty, add an error message to the end of the errors ref.
-                if (!newStudentGpa.value){
-                    errors.value.push('Student GPA is required')
+                if (!newStudentGpa.value){// checking if there is an entry made on the newStudentGPA
+                    errors.value.push('Student GPA is required')//if there is an error, it displays this messages
+                    //it also pushes this error to the error list
                 }
                 //  And, check that newStudentGPA is between 0 and 4. If not, add an error message to the end of the errors ref.
-                if (newStudentGpa.value>4 && newStudentGpa.value>=0) {
-                    errors.value.push('Student GPA is should be between 0 and 4')
+                if (newStudentGpa.value>4 && newStudentGpa.value>=0) {// checking if the GPA is btn 0 and 4
+                    errors.value.push('Student GPA is should be between 0 and 4')// this error is displayed
                 }
                     // Check the length of errors. If it is more than 0, show an alert with the error message(s)
+                // if error list is more than 0, it it displays all the errors
                     if (errors.value.length > 0) {
                         alert(errors.value.join('\n'))
-                    } else {
+                    } else {// else it will display the student name, id and gpa
                         let student= {
                             name: newStudentName.value,
                             id: newStudentID.value,
                             gpa: newStudentGpa.value,
                             selected:false
                         }
+
                         studentList.value.push(student)
+                        // this clears the entry on the input
                         newStudentName.value=''
                         newStudentID.value=''
                         newStudentGpa.value=''
@@ -169,6 +175,7 @@
 
             const removeSelectedStudents = () => {
                 studentList.value = studentList.value.filter(student => student.selected==='true')
+                // this function removes the selected student from the list
 
                 // Remove all students with selected = true from the studentList. You can do this with filter,
                 // or you can make a new empty array, loop over the studentList, and copy all selected = false students
