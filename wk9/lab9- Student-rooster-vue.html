@@ -66,7 +66,7 @@
         <li v-for="student in studentList" v-on:click="selectOrUnselectStudent(student)" v-bind:class="{ selected: student.selected }">
             <!-- Modify this to display the student's data more neatly - display their name, ID and GPA. -->
             <!-- for example "Beyonce Knowles, id: aa1234bb, GPA 3.8" -->
-            {{ student.name}}, ID: {{student.id}}, GPA: {{student.gpa}} <!-- prints the name, ID and GPa-->
+           Name: {{ student.name}}, ID: {{student.id}}, GPA: {{student.gpa}} <!-- prints the name, ID and GPa-->
         </li>
     </ul>
 
