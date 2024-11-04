@@ -18,6 +18,8 @@ const choice= ref('')
 //   //emit event to tell parent that user has made a choice
 //   emit('answer-selected', choice.value)
 // }
+
+
 // adding a watcher to watch the choice variable, when it changes, emit the event the parent that the user has made a choice
 //a different way of implementing the same functionality
 watch(choice,()=>{
