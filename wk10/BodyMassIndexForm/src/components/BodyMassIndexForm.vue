@@ -19,10 +19,10 @@ function userInput(){
   <div id="user-inputs">
     <h2>Enter your height and weight</h2>
       <label for="meters">Height in Meters</label>
-      <input type="number" v-model="heightInMeters" id="meters" ><br><!--using v-model to connect to the user input-->
+      <input type="number" v-model="heightInMeters" id="meters" ><br><!--using v-model to connect to the user input for height-->
       <label for="weight">Weight in Kilogram</label>
-      <input type="number" v-model="weightInKg" id="weight" ><br>
-      <button id="calculate" v-on:click="userInput">Calculate</button>
+      <input type="number" v-model="weightInKg" id="weight" ><br><!--using v model to connect user input for weight-->
+      <button id="calculate" v-on:click="userInput">Calculate</button><!-- the button to calculate thr bmi-->
   </div>
 
 
