@@ -2,11 +2,11 @@
 import BodyMassIndexForm from './components/BodyMassIndexForm.vue'
 import  {ref} from 'vue'
 
-const totalBmi= ref('')
+const totalBmi= ref('')// reactive variable to store the bmi
 
 function calculateBMI(height, weight){// function to calculate to bmi
-  const bmi = weight / (height * height)
-  totalBmi.value = `The BMI is ${bmi.toFixed(2)}`
+  const bmi = weight / (height * height)// this is the formula to calculate bmi
+  totalBmi.value = `The BMI is ${bmi.toFixed(2)}`//
 }
 
 </script>
@@ -19,7 +19,7 @@ function calculateBMI(height, weight){// function to calculate to bmi
       </BodyMassIndexForm>
 
 
- <p>{{totalBmi}}</p>
+ <p>{{totalBmi}}</p><!--prints out the bmi-->
 
   </div>
 
